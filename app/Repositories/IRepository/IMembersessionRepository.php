@@ -8,6 +8,8 @@ interface IMembersessionRepository{
     public function GetNotcompletedSessions();
     public function GetMOfUpcomingSession($session_id);
     public function GetMOfOngoingSession($session_id);
+    public function Create($data);
+    public function Delete($session_id , $member_id);
 
 }
 

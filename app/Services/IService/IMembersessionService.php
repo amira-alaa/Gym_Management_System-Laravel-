@@ -7,6 +7,9 @@ interface IMembersessionService{
     public function GetMembersOfOngoingSession($session_id);
 
     public function IsAttended($session_id , $member_id);
+    public function GetAllMembers();
+    public function CreateMemberSession($request);
+    public function DeleteMemberSession($session_id , $member_id);
 
 }
 

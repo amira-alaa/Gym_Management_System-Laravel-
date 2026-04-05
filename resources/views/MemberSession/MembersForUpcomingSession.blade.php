@@ -1,24 +1,24 @@
 @extends('Shared.layout')
-@section('title' , 'MemberSessions')
+@section('title' , 'Members For Upcoming Session')
 
 @section('content')
 
-{{-- @if(TempData["Success"] is not null){
-    ﻿<div id="Alert" class="alert alert-success alert-dismissible fade show">
+@if(session('Success') != null)
+    <div id="Alert" class="alert alert-success alert-dismissible fade show">
         <i class="bi bi-check-circle-fill me-2"></i>
-            @TempData["Success"]
+            {{  session('Success')}}
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
-}
+@endif
 
-@if (TempData["Error"] is not null)
-{
+@if (session('Error') != null)
+
     <div id="Alert" class="alert alert-danger alert-dismissible fade show">
         <i class="bi bi-exclamation-triangle-fill me-2"></i>
-        @TempData["Error"]
+        {{  session('Error')}}
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
-} --}}
+@endif
 
 
 <header class="bg-primary text-white rounded-3 p-4 shadow-sm mt-5 mb-4">
@@ -28,7 +28,7 @@
             <p class="mb-0 text-light opacity-75">Members That Already Book Session</p>
         </div>
         <div class="text-end">
-            <a href="{{ route('membersessions.store') }}" class="btn btn-light">
+            <a href="{{ route('membersessions.show' , $session_id ) }}" class="btn btn-light">
                 <i class="fas fa-plus me-1"></i> New Booking
             </a>
         </div>
@@ -53,11 +53,14 @@
                             <td>{{ $member['booking_date'] }}</td>
                             <td>
                                 <div class="d-flex justify-content-center gap-1">
-                                    <form method="post" asp-action="Delete" class="m-0">
+                                    <form method="post" action="{{ route('membersessions.destroy', [ $member['member_id'], $member['session_id'] ]) }}" class="m-0">
+                                        @csrf
+                                        @method('DELETE')
+
                                         <input hidden readonly name="session_id" value="{{ $member['session_id'] }}" />
                                         <input hidden readonly name="member_id" value="{{ $member['member_id'] }}" />
-                                        <button type="submit" class="btn btn-sm btn-danger"
-                                                onclick="return confirm('Are you sure you want to cancel this booking?');">
+                                        <button type="submit" class="btn btn-sm btn-danger">
+                                                {{-- onclick="return confirm('Are you sure you want to cancel this booking?');"> --}}
                                             <i class="fas fa-times"></i> Cancel
                                         </button>
                                     </form>

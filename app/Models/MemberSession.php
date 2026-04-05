@@ -9,6 +9,9 @@ class Membersession extends Model
 {
     use HasFactory;
 
+        protected $fillable = [
+            'member_id', 'session_id' , 'is_attended' , 'booking_date'
+        ];
     public function member()
     {
         return $this->belongsTo(Member::class);

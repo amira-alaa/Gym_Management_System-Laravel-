@@ -21,7 +21,12 @@ class MembersessionRepository implements IMembersessionRepository{
     public function GetMSByIds($session_id , $member_id){
         return Membersession::where('session_id',$session_id)->where('member_id' , $member_id)->firstOrFail();
     }
-
+    public function Create($data){
+        return Membersession::create($data);
+    }
+    public function Delete($session_id , $member_id){
+        return Membersession::where('session_id',$session_id)->where('member_id' , $member_id)->delete();
+    }
 
 
 }
