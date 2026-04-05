@@ -61,7 +61,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link  px-3 py-2 mx-2 fw-bolder fs-5 " aria-current="page"
-                           asp-controller="MemberSession" asp-action="Index">Sessions Schedule</a>
+                           href="{{ route('membersessions.index') }}">Sessions Schedule</a>
                     </li>
                     <li class="nav-item">
                         <form asp-action="Logout" asp-controller="Account" method="post" class="d-inline">

@@ -18,7 +18,7 @@ class Session extends Model
     ];
     public function members()
     {
-        return $this->belongsToMany(Member::class, 'member_sessions', 'session_id', 'member_id');
+        return $this->belongsToMany(Member::class, 'membersessions', 'session_id', 'member_id');
     }
     public function category()
     {

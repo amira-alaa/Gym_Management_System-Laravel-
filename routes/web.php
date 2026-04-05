@@ -2,11 +2,13 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\MemberSessionController;
 use App\Http\Controllers\MembershipController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\TrainerController;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\Routing\Route as RoutingRoute;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +48,11 @@ route::get('sessions/delete/{id}', [SessionController::class, 'delete'])->name('
 // Trainers Routes
 Route::resource('trainers', TrainerController::class);
 Route::get('trainers/delete/{id}', [TrainerController::class, 'delete'])->name('trainers.delete');
+
+
+// MemberSessions Routes
+Route::resource('membersessions' , MemberSessionController::class);
+Route::get('membersessions/{id}/UpcomingSession/members' , [MemberSessionController::class , 'GetMembersUpcomingSession'])
+                                ->name('membersessions.GetMembersUpcomingSession');
+Route::get('membersessions/{id}/OngoingSession/members' , [MemberSessionController::class , 'GetMembersOngoingSession'])
+                                ->name('membersessions.GetMembersOngoingSession');

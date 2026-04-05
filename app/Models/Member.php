@@ -35,6 +35,6 @@ class Member extends Model
         return $this->belongsToMany( Plan::class , 'Memberships' , 'member_id' , 'plan_id');
     }
     public function sessions(){
-        return $this->belongsToMany( Session::class , 'member_sessions' , 'member_id' , 'session_id');
+        return $this->belongsToMany( Session::class , 'membersessions' , 'member_id' , 'session_id');
     }
 }
