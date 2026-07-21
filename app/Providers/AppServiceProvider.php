@@ -29,7 +29,7 @@ use App\Services\IService\IMembersessionService;
 use App\Services\Service\HomeService;
 use App\Services\Service\MembersessionService;
 use App\Services\Service\TrainerService;
-
+use Illuminate\Support\Facades\URL;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -62,5 +62,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        if (app()->environment('production')) {
+            URL::forceScheme('https');
+        }
+
     }
 }
