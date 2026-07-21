@@ -52,9 +52,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(ITrainerService::class , TrainerService::class);
         $this->app->bind(IMembersessionRepository::class , MembersessionRepository::class);
         $this->app->bind(IMembersessionService::class , MembersessionService::class);
-        if (app()->environment('production')) {
-            URL::forceScheme('https');
-        }
+
     }
 
     /**
@@ -65,7 +63,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-
+        if (app()->environment('production')) {
+            URL::forceScheme('https');
+        }
 
     }
 }
