@@ -2,12 +2,15 @@
 
 namespace App\Http\Requests\Session;
 
+use App\Traits\Handler;
 use Illuminate\Foundation\Http\FormRequest;
+
 
 use function GuzzleHttp\describe_type;
 
 class StoreSessionRequest extends FormRequest
 {
+    use Handler;
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -35,4 +38,6 @@ class StoreSessionRequest extends FormRequest
             'trainer_id' => 'required|exists:trainers,id',
         ];
     }
+
+
 }

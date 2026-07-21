@@ -11,7 +11,7 @@ class PlanRepository implements IPlanRepository{
 	}
 
 	public function GetByID($id) {
-		return Plan::findOrFail($id);
+		return Plan::find($id);
 	}
 
 	public function Update($id, $data) {

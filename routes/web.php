@@ -1,3 +1,5 @@
+
+
 <?php
 
 use App\Http\Controllers\HomeController;
@@ -8,6 +10,7 @@ use App\Http\Controllers\PlanController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\TrainerController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use Symfony\Component\Routing\Route as RoutingRoute;
 
 /*
@@ -20,8 +23,36 @@ use Symfony\Component\Routing\Route as RoutingRoute;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Auth
 
-Route::get('/', [HomeController::class , 'index'])->name('home');
+
+Route::middleware('guest')->group(function () {
+    Route::get('/', [AuthController::class, 'showLogin'])->name('login.index');
+    Route::post('/login', [AuthController::class, 'login'])->name('login.store');
+
+    Route::get('/OtpLogin' , [AuthController::class , 'OtpForm'])->name('otpform.index');
+    Route::get('/OtpLogin/resendOtp' , [AuthController::class , 'ResendOtp'])->name('otpform.resend');
+    Route::get('/OtpLogin/Otp' , [AuthController::class , 'GetOtp'])->name('otpform.get');
+    Route::post('/OtpLogin' , [AuthController::class , 'verifyOtp'])->name('otpform.store');
+
+    Route::get('/register', [AuthController::class, 'showRegister'])->name('register.index');
+    Route::post('/register', [AuthController::class, 'register'])->name('register.store');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/home', fn() => view('index'));
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+});
+
+
+
+
+
+
+
+//
+
+Route::get('/home', [HomeController::class , 'index'])->name('home');
 
 // Members Routes
 Route::resource('members', MemberController::class);

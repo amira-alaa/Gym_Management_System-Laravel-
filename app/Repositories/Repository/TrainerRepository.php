@@ -15,7 +15,7 @@ class TrainerRepository implements ITrainerRepository
 
     public function GetById($id)
     {
-        return Trainer::findOrFail($id);
+        return Trainer::find($id);
     }
 
     public function Create($data)

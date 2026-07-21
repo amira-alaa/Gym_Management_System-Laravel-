@@ -64,7 +64,8 @@
                            href="{{ route('membersessions.index') }}">Sessions Schedule</a>
                     </li>
                     <li class="nav-item">
-                        <form asp-action="Logout" asp-controller="Account" method="post" class="d-inline">
+                        <form action="{{ route('logout') }}" method="post" class="d-inline">
+                            @csrf
                             <button type="submit"
                                     class="btn btn-link nav-link px-3 py-2 mx-2 fw-bolder fs-5 text-black-alternative">
                                 Logout

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests\Session;
+namespace App\Http\Requests\Auth;
 
 use App\Traits\Handler;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateSessionRequest extends FormRequest
+class StoreCardentialsRequest extends FormRequest
 {
     use Handler;
     /**
@@ -27,11 +27,10 @@ class UpdateSessionRequest extends FormRequest
     {
         return [
             //
-            'description'=> 'required|string|max:500|min:10',
-            'start_time'=> 'required',
-            'end_time'=> 'required|after:start_time',
-            'trainer_id'=> 'required|exists:trainers,id',
+            // 'name' => 'required',
+            'name' => 'required',
+            'email' => 'required|email|unique:users|regex:/^[\w\.-]+@([\w-]+\.)+[a-zA-Z]{2,}$/',
+            'password' => 'required|min:6|confirmed',
         ];
     }
-
 }

@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Member;
 use App\Enums\Gender;
 use App\Services\IService\IMemberService;
-use App\Http\Requests\StoreMemberRequest;
-use App\Http\Requests\UpdateMemberRequest;
+use App\Http\Requests\Member\StoreMemberRequest;
+use App\Http\Requests\Member\UpdateMemberRequest;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller

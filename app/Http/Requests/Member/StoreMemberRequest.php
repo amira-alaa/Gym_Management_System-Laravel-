@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Member;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -26,8 +26,8 @@ class StoreMemberRequest extends FormRequest
         return [
             // Validation rules for member creation
             'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:members,email',
-            'phone' => 'required|unique:members,phone',
+            'email' => 'required|email|unique:members,email|regex:/^[\w\.-]+@([\w-]+\.)+[a-zA-Z]{2,}$/',
+            'phone' => 'required|unique:members,phone|regex:/^\+?[0-9]{10,15}$/',
             'gender' => 'required',
             'date_of_birth' => 'required',
             'building_no' => 'required',

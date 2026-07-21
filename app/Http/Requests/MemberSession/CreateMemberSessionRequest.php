@@ -2,11 +2,13 @@
 
 namespace App\Http\Requests\MemberSession;
 
+use App\Traits\Handler;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
 class CreateMemberSessionRequest extends FormRequest
 {
+    use Handler;
     /**
      * Determine if the user is authorized to make this request.
      *

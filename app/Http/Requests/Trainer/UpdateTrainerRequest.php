@@ -2,10 +2,12 @@
 
 namespace App\Http\Requests\Trainer;
 
+use App\Traits\Handler;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateTrainerRequest extends FormRequest
 {
+    use Handler;
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -25,8 +27,8 @@ class UpdateTrainerRequest extends FormRequest
     {
         return [
             //
-            'email' => 'required|email',
-            'phone' => 'required',
+            'email' => 'required|email|regex:/^[\w\.-]+@([\w-]+\.)+[a-zA-Z]{2,}$/',
+            'phone' => 'required|regex:/^\+?[0-9]{10,15}$/',
             'specialties' => 'required',
             'building_no' => 'required',
             'street' => 'required',

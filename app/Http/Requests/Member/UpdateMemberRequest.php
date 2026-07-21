@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Member;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -25,8 +25,8 @@ class UpdateMemberRequest extends FormRequest
     {
         return [
             // Validation rules for member update
-            'email' => 'required|email',
-            'phone' => 'required',
+            'email' => 'required|email|regex:/^[\w\.-]+@([\w-]+\.)+[a-zA-Z]{2,}$/',
+            'phone' => 'required|regex:/^\+?[0-9]{10,15}$/',
             'building_no' => 'required',
             'street' => 'required',
             'city' => 'required'
