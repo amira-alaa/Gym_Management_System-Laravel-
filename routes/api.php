@@ -21,44 +21,44 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::post('/login', [AuthController::class, 'login'])->name('login');
-Route::post('/register', [AuthController::class, 'register']);
+// Route::post('/login', [AuthController::class, 'login'])->name('login');
+// Route::post('/register', [AuthController::class, 'register']);
 
-Route::middleware('auth:sanctum')->group( function () {
-    // Home Route
-    Route::get('/home', [HomeController::class , 'index'])->name('home');
-
-
-    // Member Routes
-    Route::apiResource('members', MemberController::class);
-    Route::get('members/healthRecord/{id}' , [MemberController::class , 'GetHealthRecordData'])->name('HRData');
+// Route::middleware('auth:sanctum')->group( function () {
+//     // Home Route
+//     Route::get('/home', [HomeController::class , 'index'])->name('home');
 
 
-    // Plans Routes
-    Route::resource('plans', PlanController::class);
-    Route::PUT('plans/UPStatus/{id}' , [PlanController::class, 'UpdatePlanStatus'])->name('UPStatus');
-
-    // Memberships Routes
-    Route::get('memberships', [MembershipController::class, 'index'])->name('memberships');
-    Route::post('memberships', [MembershipController::class, 'store'])->name('memberships.store');
-    route::delete('memberships/delete/{id}', [MembershipController::class, 'destroy'])->name('memberships.delete');
-
-    // Sessions Routes
-    Route::resource('sessions', SessionController::class);
-    route::get('sessions/delete/{id}', [SessionController::class, 'delete'])->name('sessions.delete');
-
-    // Trainers Routes
-    Route::resource('trainers', TrainerController::class);
+//     // Member Routes
+//     Route::apiResource('members', MemberController::class);
+//     Route::get('members/healthRecord/{id}' , [MemberController::class , 'GetHealthRecordData'])->name('HRData');
 
 
-    // MemberSessions Routes
-    Route::resource('membersessions' , MembersessionController::class);
-    Route::get('membersessions/{id}/UpcomingSession/members' , [MemberSessionController::class , 'GetMembersUpcomingSession'])
-                                    ->name('membersessions.GetMembersUpcomingSession');
-    Route::get('membersessions/{id}/OngoingSession/members' , [MemberSessionController::class , 'GetMembersOngoingSession'])
-                                    ->name('membersessions.GetMembersOngoingSession');
+//     // Plans Routes
+//     Route::resource('plans', PlanController::class);
+//     Route::PUT('plans/UPStatus/{id}' , [PlanController::class, 'UpdatePlanStatus'])->name('UPStatus');
 
-});
+//     // Memberships Routes
+//     Route::get('memberships', [MembershipController::class, 'index'])->name('memberships');
+//     Route::post('memberships', [MembershipController::class, 'store'])->name('memberships.store');
+//     route::delete('memberships/delete/{id}', [MembershipController::class, 'destroy'])->name('memberships.delete');
+
+//     // Sessions Routes
+//     Route::resource('sessions', SessionController::class);
+//     route::get('sessions/delete/{id}', [SessionController::class, 'delete'])->name('sessions.delete');
+
+//     // Trainers Routes
+//     Route::resource('trainers', TrainerController::class);
+
+
+//     // MemberSessions Routes
+//     Route::resource('membersessions' , MembersessionController::class);
+//     Route::get('membersessions/{id}/UpcomingSession/members' , [MemberSessionController::class , 'GetMembersUpcomingSession'])
+//                                     ->name('membersessions.GetMembersUpcomingSession');
+//     Route::get('membersessions/{id}/OngoingSession/members' , [MemberSessionController::class , 'GetMembersOngoingSession'])
+//                                     ->name('membersessions.GetMembersOngoingSession');
+
+// });
 
 // Route::middleware('guest')->group(function () {
 //     Route::get('/', [AuthController::class, 'showLogin'])->name('login.index');
