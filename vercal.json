@@ -11,14 +11,5 @@
       "src": "/(.*)",
       "dest": "/api/index.php"
     }
-  ],
-  "env": {
-    "APP_ENV": "production",
-    "APP_DEBUG": "false",
-    "APP_URL": "https://gymmanagementsystem.vercel.app",
-    "APP_KEY": "hjdXq1FgX8yV8TgGygS/QlZNDX19yeHiTTdLGmwqx98=",
-    "LOG_CHANNEL": "stderr",
-    "CACHE_DRIVER": "array",
-    "SESSION_DRIVER": "cookie"
-  }
+  ]
 }
