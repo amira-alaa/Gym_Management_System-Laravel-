@@ -40,7 +40,6 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/home', fn() => view('index'));
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
