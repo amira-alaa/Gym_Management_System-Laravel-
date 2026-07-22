@@ -30,6 +30,8 @@ use App\Services\Service\HomeService;
 use App\Services\Service\MembersessionService;
 use App\Services\Service\TrainerService;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Http\Request;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -64,8 +66,15 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         if (app()->environment('production')) {
-            URL::forceScheme('https');
-        }
+        URL::forceScheme('https');
+        Request::setTrustedProxies(
+            ['*'],
+            Request::HEADER_X_FORWARDED_FOR |
+            Request::HEADER_X_FORWARDED_HOST |
+            Request::HEADER_X_FORWARDED_PORT |
+            Request::HEADER_X_FORWARDED_PROTO
+        );
+    }
 
     }
 }
