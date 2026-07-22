@@ -21,7 +21,7 @@
                 <div class="logo-icon">
                     <i class="bi bi-lightning-charge-fill"></i>
                 </div>
-                <h1 class="brand-name">Route Fitness</h1>
+                <h1 class="brand-name">Fitness Gym</h1>
                 <p class="brand-subtitle">Gym Management System</p>
             </div>
 
@@ -34,7 +34,7 @@
 
                 <div class="form-floating">
                     <input name="email" class="form-control @error('email') is-invalid @enderror" id="floatingEmail" placeholder="admin@example.com"
-                           autocomplete="username" />
+                           autocomplete="username" value="{{ old('email') }}" />
                     @error('email')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
@@ -45,7 +45,7 @@
                 </div>
                 <div class="form-floating">
                     <input name="name" class="form-control @error('name') is-invalid @enderror" id="floatingName"
-                           autocomplete="username" />
+                           autocomplete="username" value="{{ old('name') }}" />
                     @error('name')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
@@ -57,7 +57,7 @@
 
                 <div class="form-floating">
                     <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="floatingPassword" placeholder="Password"
-                           autocomplete="current-password" />
+                           autocomplete="current-password"  value="{{ old('password') }}" />
                     @error('password')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror

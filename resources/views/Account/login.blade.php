@@ -20,7 +20,7 @@
                 <div class="logo-icon">
                     <i class="bi bi-lightning-charge-fill"></i>
                 </div>
-                <h1 class="brand-name">Route Fitness</h1>
+                <h1 class="brand-name">Fitness Gym</h1>
                 <p class="brand-subtitle">Gym Management System</p>
             </div>
 
@@ -129,6 +129,11 @@
                     const btn = document.getElementById('loginBtn');
                     btn.classList.add('loading');
                     btn.disabled = true;
+                }
+                else {
+                    const btn = document.getElementById('loginBtn');
+                    btn.classList.remove('loading');
+                    btn.disabled = false;
                 }
             });
         });
