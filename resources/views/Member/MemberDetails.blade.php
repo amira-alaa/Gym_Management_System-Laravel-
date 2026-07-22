@@ -20,7 +20,7 @@
                     </div>
                     <div class="card-body text-center">
                         <h2 class="mb-1 text-primary-color">{{$member->name}}</h2>
-                        <h4 class="mb-2 pb-1 border-bottom d-block">@(Model.PlanName is not null ? Model.PlanName : "No Active Plan")</h4>
+                        <h4 class="mb-2 pb-1 border-bottom d-block">{{ $member->plan_name ?? 'No Active Plan' }}</h4>
                         <div class="mt-4 text-start">
                             <div class="row g-3">
                                 <div class="col-12">
@@ -67,7 +67,7 @@
                                     <div class="p-3 bg-light rounded">
                                         <small class="text-muted d-block mb-1">Address</small>
                                         <strong>{{$member->building_no." - ". $member->street." - ".$member->city}}</strong>
-                                        
+
                                     </div>
                                 </div>
                             </div>

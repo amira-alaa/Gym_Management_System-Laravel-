@@ -4,7 +4,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MemberController;
-use App\Http\Controllers\MemberSessionController;
+use App\Http\Controllers\MembersessionController;
 use App\Http\Controllers\MembershipController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\SessionController;
@@ -81,8 +81,8 @@ Route::get('trainers/delete/{id}', [TrainerController::class, 'delete'])->name('
 
 
 // MemberSessions Routes
-Route::resource('membersessions' , MemberSessionController::class);
-Route::get('membersessions/{id}/UpcomingSession/members' , [MemberSessionController::class , 'GetMembersUpcomingSession'])
+Route::resource('membersessions' , MembersessionController::class);
+Route::get('membersessions/{id}/UpcomingSession/members' , [MembersessionController::class , 'GetMembersUpcomingSession'])
                                 ->name('membersessions.GetMembersUpcomingSession');
-Route::get('membersessions/{id}/OngoingSession/members' , [MemberSessionController::class , 'GetMembersOngoingSession'])
+Route::get('membersessions/{id}/OngoingSession/members' , [MembersessionController::class , 'GetMembersOngoingSession'])
                                 ->name('membersessions.GetMembersOngoingSession');

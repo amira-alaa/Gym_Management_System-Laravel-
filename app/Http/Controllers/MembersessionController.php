@@ -46,7 +46,7 @@ class MembersessionController extends Controller
     {
         //
         $flag = $this->_membersessionService->CreateMemberSession($request);
-        
+
         if($flag)
             return redirect()->route('membersessions.GetMembersUpcomingSession' , $request->session_id)->with('Success' , 'MemberSession Created Successfully');
         else
