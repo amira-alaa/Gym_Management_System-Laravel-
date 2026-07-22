@@ -34,7 +34,7 @@
                     <input name="email" class="form-control @error('email') is-invalid @enderror" id="floatingEmail" placeholder="admin@example.com"
                            autocomplete="username" />
                     @error('email')
-                        <span class="text-danger"> {{ $message }}</span>
+                        <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <label for="floatingEmail">
                         <i class="bi bi-envelope me-2"></i>Email Address

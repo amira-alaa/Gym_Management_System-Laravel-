@@ -33,7 +33,7 @@
                                     @endforeach
                                 </select>
                                 @error('category_id')
-                                    <div class="text-danger ">{{ $message }}</div>
+                        <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
 
@@ -48,7 +48,7 @@
                                     @endforeach
                                 </select>
                                 @error('trainer_id')
-                                    <div class="text-danger ">{{ $message }}</div>
+                        <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
 
                             </div>
@@ -60,7 +60,7 @@
                                 <textarea name="description" class="form-control @error('description') is-invalid @enderror" rows="3"
                                           placeholder="Describe the session content and objectives..." >{{ old('description') }}</textarea>
                                 @error('description')
-                                    <div class="text-danger ">{{ $message }}</div>
+                        <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
 
@@ -72,7 +72,7 @@
                                     value="{{ old('capacity') }}" />
                                 <small class="text-muted">Maximum number of participants</small>
                                 @error('capacity')
-                                    <div class="text-danger ">{{ $message }}</div>
+                        <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                                 <input name="start_time" type="datetime-local" class="form-control @error('start_time') is-invalid @enderror"
                                         value="{{ old('start_time') }}"/>
                                 @error('start_time')
-                                    <div class="text-danger ">{{ $message }}</div>
+                        <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
 
@@ -102,7 +102,7 @@
                                 <input name="end_time" type="datetime-local" class="form-control @error('end_time') is-invalid @enderror"
                                         value="{{ old('end_time') }}"/>
                                 @error('end_time')
-                                    <div class="text-danger ">{{ $message }}</div>
+                        <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>

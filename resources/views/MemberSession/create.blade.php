@@ -39,7 +39,7 @@
 
                             </select>
                             @error('member_id')
-                                <span class="text-danger">{{ $message }}</span>
+                        <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="mb-3">

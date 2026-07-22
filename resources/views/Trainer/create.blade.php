@@ -21,7 +21,7 @@
                 <label name="name" class="form-label">Name</label>
                 <input name="name" type="text" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}"/>
                 @error('name')
-                    <span class="text-danger">{{ $message }}</span>
+                        <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
 
@@ -29,7 +29,7 @@
                 <label name="email" class="form-label">Email</label>
                 <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}"/>
                 @error('email')
-                    <span class="text-danger">{{ $message }}</span>
+                        <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
 
@@ -37,7 +37,7 @@
                 <label name="phone" class="form-label">Phone</label>
                 <input name="phone" type="text" class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}"/>
                 @error('phone')
-                    <span class="text-danger">{{ $message }}</span>
+                        <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
 
             </div>
@@ -46,7 +46,7 @@
                 <label name="date_of_birth" class="form-label">Date of Birth</label>
                 <input name="date_of_birth" type="date" class="form-control @error('date_of_birth') is-invalid @enderror" value="{{ old('date_of_birth') }}"/>
                 @error('date_of_birth')
-                    <span class="text-danger">{{ $message }}</span>
+                        <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
 
@@ -59,7 +59,7 @@
                     @endforeach
                 </select>
                 @error('gender')
-                    <span class="text-danger">{{ $message }}</span>
+                        <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
 
             </div>
@@ -75,7 +75,7 @@
                 <label name="building_no" class="form-label">Building Number</label>
                 <input name="building_no" type="text" class="form-control @error('building_no') is-invalid @enderror" value="{{ old('building_no') }}"/>
                 @error('building_no')
-                    <span class="text-danger">{{ $message }}</span>
+                        <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
 
@@ -83,14 +83,14 @@
                 <label name="street" class="form-label">Street</label>
                 <input name="street" type="text" class="form-control @error('street') is-invalid @enderror" value="{{ old('street') }}"/>
                 @error('street')
-                    <span class="text-danger">{{ $message }}</span>
+                        <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="col-12 col-md-6">
                 <label name="city" class="form-label">City</label>
                 <input name="city" type="text" class="form-control @error('city') is-invalid @enderror" value="{{ old('city') }}"/>
                 @error('city')
-                    <span class="text-danger">{{ $message }}</span>
+                        <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
         </div>
@@ -109,7 +109,7 @@
                     @endforeach
                 </select>
                 @error('specialties')
-                    <span class="text-danger">{{ $message }}</span>
+                        <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
         </div>

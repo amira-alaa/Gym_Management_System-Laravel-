@@ -38,7 +38,7 @@
                                     @endforeach
                                 </select>
                                 @error('trainer_id')
-                                    <div class="text-danger">{{ $message }}</div>
+                        <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
 
@@ -48,7 +48,7 @@
                                 </label>
                                 <textarea name="description" class="form-control @error('description') is-invalid @enderror" rows="3">{{ $session->description }}</textarea>
                                 @error('description')
-                                    <div class="text-danger">{{ $message }}</div>
+                        <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                                 </label>
                                 <input name="start_time" type="datetime-local" class="form-control @error('start_time') is-invalid @enderror" value="{{ $session->start_time}}" />
                                 @error('start_time')
-                                    <div class="text-danger">{{ $message }}</div>
+                        <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
 
@@ -76,7 +76,7 @@
                                 </label>
                                 <input name="end_time" type="datetime-local" class="form-control @error('end_time') is-invalid @enderror" value="{{ $session->end_time }}" />
                                 @error('end_time')
-                                    <div class="text-danger">{{ $message }}</div>
+                        <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>

@@ -33,9 +33,9 @@
                                 <input name="email" type="text" class="form-control @error('email') is-invalid @enderror"
                                         value="{{ $trainer['email'] }}"/>
                                  @error('email')
-                                    <span class="text-danger">{{ $message }}</span>
+                        <div class="alert alert-danger">{{ $message }}</div>
                                  @enderror
-                                
+
                             </div>
 
                             <div class="col-md-6">
@@ -43,16 +43,16 @@
                                 <input name="phone" type="text" class="form-control @error('phone') is-invalid @enderror"
                                         value="{{ $trainer['phone'] }}"/>
                                 @error('phone')
-                                    <span class="text-danger">{{ $message }}</span>    
-                                @enderror        
+                        <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
 
                             </div>
                             <div class="col-md-6">
                                 <label asp-for="BuildingNumber" class="form-label"></label>
                                 <input name="building_no" type="text" class="form-control @error('building_no') is-invalid @enderror"
                                         value="{{ $trainer['building_no'] }}"/>
-                                @error('building_no')                                 
-                                    <span class="text-danger">{{ $message }}</span>
+                                @error('building_no')
+                        <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
 
                             </div>
@@ -61,7 +61,7 @@
                                 <input name="street" type="text" class="form-control @error('street') is-invalid @enderror"
                                         value="{{ $trainer['street'] }}"/>
                                 @error('street')
-                                    <span class="text-danger">{{ $message }}</span>    
+                        <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
 
                             </div>
@@ -70,7 +70,7 @@
                                 <input name="city" type="text" class="form-control @error('city') is-invalid @enderror"
                                         value="{{ $trainer['city'] }}"/>
                                 @error('city')
-                                    <span class="text-danger">{{ $message }}</span>
+                        <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
 
                             </div>
@@ -90,12 +90,12 @@
 
                                 {{-- <label  class="form-label fw-semibold">Specialties</label> --}}
                                 <select name="specialties" class="form-select @error('specialties') is-invalid @enderror" >
-                                    @foreach ( \App\Enums\Specialties::cases() as $spec )                          
+                                    @foreach ( \App\Enums\Specialties::cases() as $spec )
                                         <option value="{{ $spec->value }}" {{ $trainer['specialties'] == $spec->value ? 'selected' : '' }}> {{ $spec->name }}</option>
                                     @endforeach
                                 </select>
-                                @error('specialties')        
-                                    <span class="text-danger">{{ $message }}</span>
+                                @error('specialties')
+                        <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>

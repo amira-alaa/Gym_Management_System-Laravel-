@@ -36,7 +36,7 @@
                     <input name="email" class="form-control @error('email') is-invalid @enderror" id="floatingEmail" placeholder="admin@example.com"
                            autocomplete="username" />
                     @error('email')
-                        <span class="text-danger"> {{ $message }}</span>
+                        <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <label for="floatingEmail">
                         <i class="bi bi-envelope me-2"></i>Email Address
@@ -47,7 +47,7 @@
                     <input name="name" class="form-control @error('name') is-invalid @enderror" id="floatingName"
                            autocomplete="username" />
                     @error('name')
-                        <span class="text-danger"> {{ $message }}</span>
+                        <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <label for="floatingName">
                         <i class="bi bi-person-fill me-2"></i>Name
@@ -59,7 +59,7 @@
                     <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="floatingPassword" placeholder="Password"
                            autocomplete="current-password" />
                     @error('password')
-                        <span class="text-danger"> {{ $message }}</span>
+                        <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <label for="floatingPassword">
                         <i class="bi bi-lock-fill me-2"></i>Password
@@ -70,7 +70,7 @@
                     <input type="password" name="password_confirmation" class="form-control @error('password_confirmation') is-invalid @enderror" id="floatingPassword" placeholder="Password"
                            autocomplete="current-password" />
                     @error('password_confirmation')
-                        <span class="text-danger"> {{ $message }}</span>
+                        <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <label for="floatingPassword">
                         <i class="bi bi-lock-fill me-2"></i>Verify Password
