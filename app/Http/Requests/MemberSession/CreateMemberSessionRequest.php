@@ -8,7 +8,7 @@ use Illuminate\Validation\Rule;
 
 class CreateMemberSessionRequest extends FormRequest
 {
-    use Handler;
+    // use Handler;
     /**
      * Determine if the user is authorized to make this request.
      *

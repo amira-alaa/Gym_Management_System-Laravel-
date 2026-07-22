@@ -15,16 +15,16 @@ trait Handler{
         $user->save();
         Mail::to($user->email)->send(new \App\Mail\SendOtpMail($otp));
     }
-    public function failedValidation(Validator $validator)
-    {
-        throw new HttpResponseException(
-            response()->json([
-                'success' => false,
-                'message' => 'Validation errors',
-                'errors' => $validator->errors()
-            ], 422)
-        );
-    }
+    // public function failedValidation(Validator $validator)
+    // {
+    //     throw new HttpResponseException(
+    //         response()->json([
+    //             'success' => false,
+    //             'message' => 'Validation errors',
+    //             'errors' => $validator->errors()
+    //         ], 422)
+    //     );
+    // }
 }
 
 

@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateTrainerRequest extends FormRequest
 {
-    use Handler;
+    // use Handler;
     /**
      * Determine if the user is authorized to make this request.
      *
